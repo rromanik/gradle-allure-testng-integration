@@ -50,7 +50,11 @@ plugins {
 }
 ```
 After this modification, `allureReport` task becomes available.
-Running command ```./gradlew clean test allureReport``` leads to the following
+Running command 
+```
+./gradlew clean test allureReport
+``` 
+leads to the following
 * Allure commandline is downloaded into `/build/allure/commandline` folder. 
 Based on the artifacts found in this folder, we can conclude that Allure commandline version is 2.13.6
 * Allure results are collected into `/build/allure-results` folder.
