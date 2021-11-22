@@ -4,9 +4,18 @@ This project is created to try out integrating Gradle with Allure reporter and w
 I'm going to move from the simplest possible configuration to more complex as more features will be required.
 
 As of November 22, 2021, the latest versions of tools are following:
-Gradle 7.3
-Allure gradle plugin: 2.9.6
-TestNG: 7.4.0
+- [Gradle](https://gradle.org/): 7.3
+- Allure gradle plugin: 2.9.6
+
+[Allure-gradle GitHub](https://github.com/allure-framework/allure-gradle)
+
+[Allure Gradle plugin](https://plugins.gradle.org/plugin/io.qameta.allure)
+
+
+- TestNG: 7.4.0
+[TestNG web site](https://testng.org/doc/)
+
+[TestNG GitHub](https://github.com/cbeust/testng)
 
 ## Initial configuration
 Initially `build.gradle` file looked like following
@@ -31,6 +40,8 @@ test {
 }
 ```
 ## Experiment 1: add only Allure gradle plugin
+See branches starting with `v1-`.
+
 Let's add Allure gradle plugin
 ```
 plugins {
