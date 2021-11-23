@@ -56,7 +56,27 @@ Running command
 ``` 
 leads to the following
 * Allure commandline is downloaded into `/build/allure/commandline` folder. 
-Based on the artifacts found in this folder, we can conclude that Allure commandline version is 2.13.6
+Based on the artifacts found in this folder, we can conclude that Allure commandline version is `2.13.6`
 * Allure results are collected into `/build/allure-results` folder.
 * Allure report is generated into `/build/reports/allure-report` folder
 * Allure report is opened without any issues in a browser.
+
+## Experiment 2: Specify Allure report version explicitly
+I want to explicitly control the version of allure report. In Experiment 1, allure gradle plugin seems to select 
+a default version of allure report, which was `2.13.6`.
+At the moment, the latest version of allure report is `2.16.1`.
+To use it, let's add the following to `build.gradle`
+```
+allure {
+    version = '2.16.1'
+}
+```
+Now, running command
+```
+./gradlew clean test allureReport
+``` 
+leads to the following:
+* Allure commandline is downloaded into `/build/allure/commandline` folder.
+This time the version is `2.16.1`.
+
+Other results are the same as in Experiment 1.
