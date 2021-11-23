@@ -86,3 +86,22 @@ leads to the following:
 This time the version is `2.16.1`.
 
 Other results are the same as in Experiment 1.
+
+## Experiment 3. Add SLF4J NOP logger
+See branches starting with `v3-`.
+
+**Goal:** I want to get rid of SLF4J errors in console.
+
+When allure dependency is added to the project, and if `testLogging.showStandardStreams = true` added to `build.gradle`
+under `test`, there are following errors in console:
+```
+Gradle Test Executor 5 STANDARD_ERROR
+    SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+    SLF4J: Defaulting to no-operation (NOP) logger implementation
+    SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+```
+To avoid them, let's add `slf4j-nop` dependency explicitly:
+```
+testImplementation group: 'org.slf4j', name: 'slf4j-nop', version: '1.7.32'
+```
+After this, executing `./gradlew test allureReport` does not generate any errors in console.
