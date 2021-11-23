@@ -42,6 +42,8 @@ test {
 ## Experiment 1: add only Allure gradle plugin
 See branches starting with `v1-`.
 
+**Goal:** I want to generate allure report after my tests are run.
+
 Let's add Allure gradle plugin
 ```
 plugins {
@@ -62,7 +64,11 @@ Based on the artifacts found in this folder, we can conclude that Allure command
 * Allure report is opened without any issues in a browser.
 
 ## Experiment 2: Specify Allure report version explicitly
-I want to explicitly control the version of allure report. In Experiment 1, allure gradle plugin seems to select 
+See branches starting with `v2-`.
+
+**Goal:** I want to explicitly control the version of allure report. 
+
+In Experiment 1, allure gradle plugin seems to select 
 a default version of allure report, which was `2.13.6`.
 At the moment, the latest version of allure report is `2.16.1`.
 To use it, let's add the following to `build.gradle`
