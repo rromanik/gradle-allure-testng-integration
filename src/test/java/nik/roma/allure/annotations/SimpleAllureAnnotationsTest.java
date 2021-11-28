@@ -1,13 +1,11 @@
 package nik.roma.allure.annotations;
 
-import io.qameta.allure.Attachment;
-import io.qameta.allure.Epic;
-import io.qameta.allure.Step;
-import io.qameta.allure.Story;
+import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 @Epic("Allure Annotations")
+@Feature("Basic Annotations")
 @Story("Basic Annotations: Step, Attachment, Epic, Story")
 public class SimpleAllureAnnotationsTest {
 
