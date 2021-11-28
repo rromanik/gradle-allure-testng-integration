@@ -105,3 +105,28 @@ To avoid them, let's add `slf4j-nop` dependency explicitly:
 testImplementation group: 'org.slf4j', name: 'slf4j-nop', version: '1.7.32'
 ```
 After this, executing `./gradlew test allureReport` does not generate any errors in console.
+
+## Experiment 3. Specify allure-testng adaptor version explicitly
+See branches starting with `v4-`.
+
+**Goal:** I want to select allure-testng adaptor version explicitly.
+
+When running `./gradlew test --info`, there is the following in console:
+```
+allure-gradle: added dependency io.qameta.allure:allure-testng:2.13.9 to runtimeElements scope of org.testng:testng:7.4.0
+```
+which means that allure-gradle automatically adds allure-testng of version `2.13.9`.
+At the moment, the latest version of allure-testng is `2.16.1`.
+To use it, let's add the following to `build.gradle` under `allure`:
+```
+allure {
+    ...
+    adapter {
+        allureJavaVersion = "2.16.1"
+    }
+}
+```
+Now, running `./gradlew test --info` leads to the following line in console:
+```
+allure-gradle: added dependency io.qameta.allure:allure-testng:2.16.1 to runtimeElements scope of org.testng:testng:7.4.0
+```
