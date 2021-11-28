@@ -154,4 +154,19 @@ allure {
 Some tests are added in `nik.roma.allure.annotations` package to learn how annotations work.
 Run `./gradlew clean test allureReport` to run tests and generate the report.
 
+## Experiment 6. Use @Issue, @TmsLink, and @Link annotations
+See branches starting with `v6-`.
 
+**Goal:** I want to use @Issue, @TmsLink, and @Link annotations, and provide patterns to them.
+
+Add `allure.properties` file to test resources with the following content:
+```
+allure.link.issue.pattern=https://example.org/issue/{}
+allure.link.tms.pattern=https://example.org/tms/{}
+allure.link.mylink.pattern=https://example.org/mylink/{}
+allure.link.help.pattern=https://example.org/help/{}
+```
+The first pattern is for @Issue annotation.
+The second pattern is for @TmsLink annotation.
+The third and fourth patters are for @Link annotations with type `mylink` and `help` respectively.
+For usage, see tests in `nik.roma.allure.links` package.
