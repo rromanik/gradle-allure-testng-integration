@@ -11,12 +11,22 @@ repositories {
 }
 
 dependencies {
+    // https://mvnrepository.com/artifact/org.testng/testng
     testImplementation 'org.testng:testng:7.4.0'
-    testImplementation group: 'org.slf4j', name: 'slf4j-nop', version: '1.7.32'
+
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-nop
+    testImplementation 'org.slf4j:slf4j-nop:1.7.32'
+
+    // https://mvnrepository.com/artifact/io.qameta.allure/allure-testng
+    // implementation 'io.qameta.allure:allure-testng:2.16.1'
+
 }
 
 allure {
     version = '2.16.1'
+    adapter {
+        allureJavaVersion = "2.16.1"
+    }
 }
 
 test {
