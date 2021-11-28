@@ -106,7 +106,7 @@ testImplementation group: 'org.slf4j', name: 'slf4j-nop', version: '1.7.32'
 ```
 After this, executing `./gradlew test allureReport` does not generate any errors in console.
 
-## Experiment 3. Specify allure-testng adaptor version explicitly
+## Experiment 4. Specify allure-testng adaptor version explicitly
 See branches starting with `v4-`.
 
 **Goal:** I want to select allure-testng adaptor version explicitly.
@@ -130,3 +130,28 @@ Now, running `./gradlew test --info` leads to the following line in console:
 ```
 allure-gradle: added dependency io.qameta.allure:allure-testng:2.16.1 to runtimeElements scope of org.testng:testng:7.4.0
 ```
+
+## Experiment 5. Process Allure annotations
+See branches starting with `v5-`.
+
+**Goal:** I want to see reports with Steps, Attachments, Epics and Stories details.
+
+Allure automatically configures `aspectjweaver`] so that annotations are processed by default.
+The version of `aspectjweaver` used by default is `1.9.5`.
+Currently, it is defined in 
+[AllureAdapterExtension.kt](https://github.com/allure-framework/allure-gradle/blob/master/allure-adapter-plugin/src/main/kotlin/io/qameta/allure/gradle/adapter/AllureAdapterExtension.kt).
+As of today, the latest stable version of [`aspectjweaver`](https://mvnrepository.com/artifact/org.aspectj/aspectjweaver) is `1.9.7`.
+To explicitly configure it, add the following into `build.gradle`:
+```
+allure {
+    ...
+    adapter {
+        ...
+        aspectjVersion = "1.9.7"
+    }
+}
+```
+Some tests are added in `nik.roma.allure.annotations` package to learn how annotations work.
+Run `./gradlew clean test allureReport` to run tests and generate the report.
+
+

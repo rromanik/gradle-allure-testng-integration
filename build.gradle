@@ -26,6 +26,7 @@ allure {
     version = '2.16.1'
     adapter {
         allureJavaVersion = "2.16.1"
+        aspectjVersion = "1.9.7"
     }
 }
 
