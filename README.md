@@ -170,3 +170,25 @@ The first pattern is for @Issue annotation.
 The second pattern is for @TmsLink annotation.
 The third and fourth patters are for @Link annotations with type `mylink` and `help` respectively.
 For usage, see tests in `nik.roma.allure.links` package.
+
+**References**
+- [allure-testng documentation](https://github.com/allure-framework/allure-docs/blob/master/content/frameworks/java/testng.md) in GitHub.
+
+# References
+
+#### Allure gradle plugin
+- [Allure Gradle plugin](https://github.com/allure-framework/allure-gradle) GitHub repository
+- [Allure Gradle plugin](https://plugins.gradle.org/plugin/io.qameta.allure) in Gradle plugin portal
+- Default version for Allure report (commandline) used by Allure gradle plugin can be found in [AllureExtension.kt](https://github.com/allure-framework/allure-gradle/blob/master/allure-base-plugin/src/main/kotlin/io/qameta/allure/gradle/base/AllureExtension.kt)
+- Default versions for Allure-java adapters and for `aspectjweaver` can be found in [AllureAdapterExtension.kt](https://github.com/allure-framework/allure-gradle/blob/master/allure-adapter-plugin/src/main/kotlin/io/qameta/allure/gradle/adapter/AllureAdapterExtension.kt)
+
+#### Allure report
+- [Allure report](https://github.com/allure-framework/allure2) GitHub repository
+- [Allure documentation](https://docs.qameta.io/allure-report/)
+- [Allure documentation](https://docs.qameta.io/allure/) earlier version
+- [Allure docs](https://github.com/allure-framework/allure-docs) in GitHub
+
+#### Allure testng adapter
+- [Allure-java atapters](https://github.com/allure-framework/allure-java) repository
+- [Allure testng docs](https://github.com/allure-framework/allure-docs/blob/master/content/frameworks/java/testng.md) in GitHub
+- [Allure testng docs](https://docs.qameta.io/allure/#_testng)
