@@ -34,3 +34,8 @@ test {
     useTestNG()
     testLogging.showStandardStreams = true
 }
+
+tasks.register("cln") {
+    dependsOn 'cleanTest'
+    dependsOn 'cleanAllureReport'
+}
