@@ -33,6 +33,10 @@ allure {
 test {
     useTestNG()
     testLogging.showStandardStreams = true
+
+    //https://blog.mrhaki.com/2010/11/gradle-goodness-running-tests-in.html
+    if (project.hasProperty('maxParallelForks'))
+        maxParallelForks = project.maxParallelForks as int
 }
 
 tasks.register("cln") {
