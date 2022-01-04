@@ -174,6 +174,32 @@ For usage, see tests in `nik.roma.allure.links` package.
 **References**
 - [allure-testng documentation](https://github.com/allure-framework/allure-docs/blob/master/content/frameworks/java/testng.md) in GitHub.
 
+## Experiment 7. Parallel test execution
+See branches starting with `v7-`.
+
+**Goal:** I want to execute tests in parallel.
+
+To execute tests in parallel, set the appropriate value for `maxParallelForks` property in `gradle.build`:
+```
+test {
+    ...
+    if (project.hasProperty('maxParallelForks'))
+        maxParallelForks = project.maxParallelForks as int
+}
+```
+Now, executing the following command
+```
+./gradlew clean test -PmaxParallelForks=4 allureReport
+```
+will run tests in parallel in 4 threads.
+In allure report, this fact will be reflected under Timeline tab,
+where it can be seen how many threads were used for tests.
+
+**References**
+- [Gradle docs on testing in Java](https://docs.gradle.org/current/userguide/java_testing.html#sec:test_execution)
+- [Gradle docs on performance](https://docs.gradle.org/current/userguide/performance.html#parallel_test_execution)
+- [Gradle Goodness blog](https://blog.mrhaki.com/2010/11/gradle-goodness-running-tests-in.html)
+
 # References
 
 #### Allure gradle plugin
